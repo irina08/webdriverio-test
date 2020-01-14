@@ -90,7 +90,7 @@ describe('Register page', () => {
 
     it('should click button Submit after filling all fields', () => {
         const button = $('form button[type="submit"]').click();
-        browser.pause(2000);
+        browser.pause(1000);
     });
 
     it('should redirect to login page after user registration', () => {
@@ -128,19 +128,30 @@ describe('Register page', () => {
 
     it('should click button Submit on User Login page after filling all fields', () => {
         const button = $('form button[type="submit"]').click();
-        browser.pause(200000);
-    });
-
-    it('User page should have a correct title', () => {
-        const expected = 'Progress Monitor';
-        const actual = browser.getTitle();
-        expect(expected).equal('Progress Monitor');
         browser.pause(1000);
     });
 
-    it('After log in in user account page should have ' +
-        'text "You are a new user' +
-        'fist name and last name', () => {
+    it("After log in new user's account, User page should " +
+        "have a correct title", () => {
+        const expected = 'Progress Monitor';
+        const actual = browser.getTitle();
+        expect(expected).equal(actual);
+        browser.pause(1000);
+    });
+
+    it("After log in new user account, user's page should have " +
+        "user's fist name and last name", () => {
+        //const actual = $('*=Morgan').getText();
+        //const actual = $('=John Morgan').getText();
+        const actual = $('li a').getText();
+        console.log(actual);
+        const expected = 'John Morgan';
+        expect(actual).equal(expected);
+        browser.pause(1000);
+    });
+
+    it("After log in new user account, user's page should have " +
+        "heading 'You are a new user'", () => {
         const actual = $('h1').getText();
         const expected = 'You are a new user';
         expect(actual).equal(expected);
