@@ -7,7 +7,7 @@ For this project you need to have already installed Node.js, npm, Chai.
 and download the Node installer.
 2. Once it's done, you can test to see both node and npm functioning by 
 opening terminal and typing node -v and npm -v, which will check the 
-version number.
+version number.  
 [Helpful link Node](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
 
 ### Initializing of local repository
@@ -31,7 +31,8 @@ where you want the cloned directory to be made.
 [WebdriverIO installation](https://webdriver.io/docs/gettingstarted.html)
 
 ### How to run tests
-1. Tests you can find in /test/specs/register.js file.  
+1. Tests you can find in 
+[/test/specs/register.js](https://github.com/irina08/webdriverio-test/blob/master/test/specs/register.js) file.  
 2. For running test you need to change line 7 in package.json file to 
 "test": "./node_modules/.bin/wdio wdio.conf.js".  
 3. Run command: npm test or ./node_modules/.bin/wdio wdio.conf.js
