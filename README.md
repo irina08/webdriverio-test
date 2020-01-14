@@ -8,6 +8,7 @@ and download the Node installer.
 2. Once it's done, you can test to see both node and npm functioning by 
 opening terminal and typing node -v and npm -v, which will check the 
 version number.  
+
 [Helpful link Node](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
 
 ### Initializing of local repository
