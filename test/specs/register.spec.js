@@ -1,5 +1,6 @@
 const { URL_REGISTER, URL_LOGIN } = require('./url_data');
-const { user, pageRegister, pageRegisterSelectors, pageLogin, pageLoginSelectors, pageConfirmation, pageConfirmationSelectors } = require('./registerLoginConfirmationNewUser_page_data');
+const { user, pageRegister, pageRegisterSelectors, pageConfirmation, pageConfirmationSelectors } = require('./registerLoginConfirmationNewUser_page_data');
+const { pageLogin, pageLoginSelectors } = require('./login_logout_data');
 
 const assert = require('assert');
 const { expect } = require('chai');

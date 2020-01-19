@@ -1,8 +1,8 @@
 const { expect } = require('chai');
 const { URL_LOGIN, URL_DIARY, URL_CREATE_DAY_REPORT } = require('./url_data');
 const { admin } = require('./admin_data');
-const { pageLoginSelectors } = require('./registerLoginConfirmationNewUser_page_data');
 const { diaryPageSelectors, diaryPage, createDayReport, createDayReportSelectors } = require('./diary_data');
+const {pageLogin, pageLoginSelectors, logoutSelectors } = require('./login_logout_data');
 
 
 describe('CREATE DAY REPORT', () => {
@@ -17,7 +17,7 @@ describe('CREATE DAY REPORT', () => {
     browser.pause(1000);
   });
 
-  it('should have the right admin name', () => {
+  it('should admin page has the right heading', () => {
     const actual = $('h1').getText();
     const expected = admin.firstName + ' ' + admin.lastName;
     expect(actual).equal(expected);
@@ -124,7 +124,11 @@ describe('CREATE DAY REPORT', () => {
   });
 
   after('should user logout', () => {
-
+    const element1 = $(logoutSelectors.dropdown);
+    element1.click();
+    const element2 = $(logoutSelectors.logout);
+    element2.click();
+    browser.pause(2000);
   });
 });
 

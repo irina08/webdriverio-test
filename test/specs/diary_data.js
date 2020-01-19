@@ -30,4 +30,17 @@ const createDayReportSelectors = {
     createdDiary: 'div[qa="description"]'
 };
 
-module.exports = { diaryPage, diaryPageSelectors, createDayReport, createDayReportSelectors };
+const diaryData  = {
+    approvedText: 'Approved',
+    likedText: 'I like this 👍1'
+}
+const diarySelectors = {
+    approveButton: '//div[3]//span[3]//div[1]//button[1]',
+    approved: '//span[@class="mr-4 badge badge-success"]',
+    likeButton: '//div[3]//span[4]//button[1]',
+    liked: '//div[3]//span[4]//button[1]',
+    editButton: 'a[class="btn btn-link"]',
+    deleteButton: '//div[5]//div[3]//button[1]'
+}
+
+module.exports = { diaryPage, diaryPageSelectors, createDayReport, createDayReportSelectors, diarySelectors, diaryData };

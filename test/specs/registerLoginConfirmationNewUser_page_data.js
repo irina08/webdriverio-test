@@ -33,18 +33,6 @@ const pageRegisterSelectors = {
     englishLevelInput: 'form select[name="englishLevel"]',
 };
 
-const pageLogin = {
-    title: 'Progress Monitor',
-    h1: 'User Login',
-};
-
-const pageLoginSelectors = {
-    h1: 'h1',
-    emailInput: 'form input[name="email"]',
-    passwordInput: 'form input[name="password"]',
-    submitButton: 'form button[type="submit"]'
-};
-
 const pageConfirmation = {
     title: 'Progress Monitor',
     firstLastName: 'John Morgan',
@@ -56,4 +44,4 @@ const pageConfirmationSelectors = {
     firstLastName: '.dropdown-toggle.nav-link'
 };
 
-module.exports = { user, pageRegister, pageRegisterSelectors, pageLogin, pageLoginSelectors, pageConfirmation, pageConfirmationSelectors };
+module.exports = { user, pageRegister, pageRegisterSelectors, pageConfirmation, pageConfirmationSelectors };
