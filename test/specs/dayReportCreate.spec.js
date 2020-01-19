@@ -4,6 +4,7 @@ const { admin } = require('./admin_data');
 const { pageLoginSelectors } = require('./registerLoginConfirmationNewUser_page_data');
 const { diaryPageSelectors, diaryPage, createDayReport, createDayReportSelectors } = require('./diary_data');
 
+
 describe('CREATE DAY REPORT', () => {
   before('Login as admin', () => {
     browser.url(URL_LOGIN);
@@ -44,12 +45,13 @@ describe('CREATE DAY REPORT', () => {
   });
 /*
   it('should diary page has initial number of day reports >= 1', () => {
-    const num = $('div.mt-2').getText();
+    const num = $('div[qa="description"]').getText();
     expect(num > 0).to.be.true;
 
     browser.pause(1000);
   });
 */
+
   it('should redirect to create day report page', () => {
     const createDayReport = $(diaryPageSelectors.createDayReportButton);
     createDayReport.click();
@@ -64,8 +66,8 @@ describe('CREATE DAY REPORT', () => {
   });
 
   it('should create day report page has a correct heading', () => {
-    const actual = browser.getUrl();
-    const expected = URL_CREATE_DAY_REPORT;
+    const actual = $(createDayReportSelectors.h1).getText();
+    const expected = createDayReport.h1;
     expect(actual).equal(expected);
     browser.pause(1000);
   });
@@ -93,6 +95,7 @@ describe('CREATE DAY REPORT', () => {
     browser.pause(1000);
   });
 
+
   it('should fill field "How was your day?" ' +
       ' with no less than 30 characters', () => {
     const element = $(createDayReportSelectors.textareaDescription);
@@ -113,8 +116,16 @@ describe('CREATE DAY REPORT', () => {
     browser.pause(1000);
   });
 
+  it('should created day report to be appear on "Day reports" page', () => {
+    const createdDiary = $$(createDayReportSelectors.createdDiary)[0].getText();
+    const expected = createDayReport.description;
+    expect(createdDiary).equal(expected);
+    browser.pause(1000);
+  });
 
+  after('should user logout', () => {
 
+  });
 });
 
 

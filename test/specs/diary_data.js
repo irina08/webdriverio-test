@@ -1,6 +1,7 @@
+const desc = `Everything is fine. Today I solved ${Math.floor(Math.random() * 20)} katas, created ${Math.floor(Math.random() * 10)} automated tests.`;
+
 const diaryPage = {
     h1: 'Daily reports',
-
 };
 
 const diaryPageSelectors = {
@@ -9,13 +10,14 @@ const diaryPageSelectors = {
 };
 
 const createDayReport = {
+    h1: 'Create day report',
     morale: Math.floor(Math.random() * 9) + 1,
     hours: Math.floor(Math.random() * 11),
-    description: `Everything is fine. Today I solved  ${Math.floor(Math.random() * 20)} 
-                    katas, created ${Math.floor(Math.random() * 10)} automated tests.`
+    description: desc
 };
 
 const createDayReportSelectors = {
+    h1: 'h1',
     understood: 'input[id="input-[1]"]',
     classmates: 'input[id="input-[2]"]',
     codePractice: 'input[id="input-[5]"]',
@@ -25,7 +27,7 @@ const createDayReportSelectors = {
     textareaDescription: 'textarea[name="description"]',
     buttonSave: 'button[type="submit"]',
     //numberOfDayReports: 'div[qa="description"]',
-
+    createdDiary: 'div[qa="description"]'
 };
 
 module.exports = { diaryPage, diaryPageSelectors, createDayReport, createDayReportSelectors };
