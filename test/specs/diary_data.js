@@ -36,6 +36,8 @@ const diaryData  = {
     approvedText: 'Approved',
     approvedNotification: 'Diary approved. Updated Achievement. Success',
     likedText: 'I like this 👍1',
+    likedNotification: 'Diary Like. Success',
+    deletedNotification: 'Diary deleted'
 
 }
 const diarySelectors = {
@@ -44,8 +46,10 @@ const diarySelectors = {
     diaryApprovedNotification: '//h4[@class="notification-title"]',
     likeButton: '//div[3]//span[4]//button[1]',
     liked: '//div[3]//span[4]//button[1]',
+    diaryLikedNotification: '//h4[@class="notification-title"]',
     editButton: 'a[class="btn btn-link"]',
     deleteButton: '//div[5]//div[3]//button[1]',
+    diaryDeletedNotification: '//h4[@class="notification-title"]'
 }
 
 module.exports = { diaryPage, diaryPageSelectors, createDayReport, createDayReportSelectors, diarySelectors, diaryData };

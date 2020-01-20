@@ -63,6 +63,13 @@ describe('WORKING DAY REPORT', () => {
     browser.pause(1000);
   });
 
+  it('should get success confirmation notification after `like` last diary', () => {
+    const actual = $(diarySelectors.diaryLikedNotification).getText();
+    const expected = diaryData.likedNotification;
+    expect(actual).equal(expected);
+    browser.pause(1000);
+  });
+
   //functionality edit doesn't work
   it('should edit last diary', () => {
     const edit = $(diarySelectors.editButton);
@@ -79,6 +86,13 @@ describe('WORKING DAY REPORT', () => {
   it('should delete last diary', () => {
     const del= $(diarySelectors.deleteButton);
     del.click();
+    browser.pause(1000);
+  });
+
+  it('should get success confirmation notification after deleting last diary', () => {
+    const actual = $(diarySelectors.diaryDeletedNotification).getText();
+    const expected = diaryData.deletedNotification;
+    expect(actual).equal(expected);
     browser.pause(1000);
   });
 
