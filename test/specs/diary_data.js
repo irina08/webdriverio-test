@@ -13,7 +13,8 @@ const createDayReport = {
     h1: 'Create day report',
     morale: Math.floor(Math.random() * 9) + 1,
     hours: Math.floor(Math.random() * 11),
-    description: desc
+    description: desc,
+    notificationDiaryCreated: 'Diary created'
 };
 
 const createDayReportSelectors = {
@@ -27,20 +28,24 @@ const createDayReportSelectors = {
     textareaDescription: 'textarea[name="description"]',
     buttonSave: 'button[type="submit"]',
     //numberOfDayReports: 'div[qa="description"]',
-    createdDiary: 'div[qa="description"]'
+    createdDiary: 'div[qa="description"]',
+    diaryCreated: '//h4[@class="notification-title"]'
 };
 
 const diaryData  = {
     approvedText: 'Approved',
-    likedText: 'I like this 👍1'
+    approvedNotification: 'Diary approved. Updated Achievement. Success',
+    likedText: 'I like this 👍1',
+
 }
 const diarySelectors = {
     approveButton: '//div[3]//span[3]//div[1]//button[1]',
     approved: '//span[@class="mr-4 badge badge-success"]',
+    diaryApprovedNotification: '//h4[@class="notification-title"]',
     likeButton: '//div[3]//span[4]//button[1]',
     liked: '//div[3]//span[4]//button[1]',
     editButton: 'a[class="btn btn-link"]',
-    deleteButton: '//div[5]//div[3]//button[1]'
+    deleteButton: '//div[5]//div[3]//button[1]',
 }
 
 module.exports = { diaryPage, diaryPageSelectors, createDayReport, createDayReportSelectors, diarySelectors, diaryData };

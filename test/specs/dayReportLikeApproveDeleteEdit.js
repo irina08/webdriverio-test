@@ -43,6 +43,13 @@ describe('WORKING DAY REPORT', () => {
     browser.pause(1000);
   });
 
+  it('should get success confirmation notification after approving last diary', () => {
+    const actual = $(diarySelectors.diaryApprovedNotification).getText();
+    const expected = diaryData.approvedNotification;
+    expect(actual).equal(expected);
+    browser.pause(1000);
+  });
+
   it('should like last diary', () => {
     const like = $(diarySelectors.likeButton);
     like.click();
@@ -74,7 +81,6 @@ describe('WORKING DAY REPORT', () => {
     del.click();
     browser.pause(1000);
   });
-
 
   after('should user logout', () => {
     const element1 = $(logoutSelectors.dropdown);

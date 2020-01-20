@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const { URL_LOGIN, URL_DIARY, URL_CREATE_DAY_REPORT } = require('./url_data');
 const { admin } = require('./admin_data');
 const { diaryPageSelectors, diaryPage, createDayReport, createDayReportSelectors } = require('./diary_data');
-const {pageLogin, pageLoginSelectors, logoutSelectors } = require('./login_logout_data');
+const { pageLoginSelectors, logoutSelectors } = require('./login_logout_data');
 
 
 describe('CREATE DAY REPORT', () => {
@@ -112,6 +112,13 @@ describe('CREATE DAY REPORT', () => {
   it('should redirect to diary page with a correct URL', () => {
     const actual = browser.getUrl();
     const expected = URL_DIARY;
+    expect(actual).equal(expected);
+    browser.pause(1000);
+  });
+
+  it('should after creating diary show notification "Diary created"', () => {
+    const actual = $(createDayReportSelectors.diaryCreated).getText();
+    const expected = createDayReport.notificationDiaryCreated;
     expect(actual).equal(expected);
     browser.pause(1000);
   });
