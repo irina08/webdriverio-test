@@ -38,7 +38,7 @@ describe('Create FlashCards/Create New FlashGroup', () => {
     browser.pause(1000);
   });
 
-  it('should Cards/FlashGroup page get success confirmation', () => {
+  it('should Cards/FlashGroup page get success notification confirmation', () => {
     const actual = $(cardsPageSelectors.goToFlashCardPageNotification).getText();
     const expected = cardsPage.allFlashGroupsNotification;
     expect(actual).equal(expected);
@@ -60,23 +60,22 @@ describe('Create FlashCards/Create New FlashGroup', () => {
   it('should fill `Group description` field', () => {
     const element = $(cardsPageSelectors.groupDescriptionSelector);
     element.setValue(cardsPage.groupDescription);
-    browser.pause(1000);
+    browser.pause(5000);
   });
 
   it('should create FlashGroup after clicking button "Create"', () => {
     const button = $(cardsPageSelectors.createButton);
     button.click();
-    browser.pause(1000);
+    browser.pause(5000);
   });
 
-/*
-  it('should get success confirmation notification after deleting last diary', () => {
-    const actual = $(diarySelectors.diaryDeletedNotification).getText();
-    const expected = diaryData.deletedNotification;
+  it('should get success confirmation notification', () => {
+    const actual = $(cardsPageSelectors.goToFlashCardPageNotification).getText();
+    const expected = cardsPage.allFlashGroupsNotification;
     expect(actual).equal(expected);
     browser.pause(1000);
   });
-*/
+
   after('should user logout', () => {
     const element1 = $(logoutSelectors.dropdown);
     element1.click();
