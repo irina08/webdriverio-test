@@ -45,6 +45,12 @@ describe('Create FlashCards/Create New FlashGroup', () => {
     browser.pause(1000);
   });
 
+  it('should we know how many FlashGroups already exist', () => {
+    const countBefore = $$(cardsPageSelectors.listCardsItem).length;
+    expect(countBefore > 0).to.be.true;
+    browser.pause(1000);
+  });
+
   it('should button "Create New FlashGroup" redirect to new modal window', () => {
     const button = $(cardsPageSelectors.createNewFlashGroupButton);
     button.click();
@@ -73,6 +79,20 @@ describe('Create FlashCards/Create New FlashGroup', () => {
     const actual = $(cardsPageSelectors.goToFlashCardPageNotification).getText();
     const expected = cardsPage.allFlashGroupsNotification;
     expect(actual).equal(expected);
+    browser.pause(1000);
+  });
+/*
+  it('should we know that after creating new FlashGroup, ' +
+      'the Number of FlashGroups become one more', () => {
+    const countAfter = $$(cardsPageSelectors.listCardsItem).length;
+    expect(countAfter - countBefore).equal(1);
+    browser.pause(1000);
+  });
+*/
+  it('should verify that day created FlashGroup appeared on `FlashGroups` page', () => {
+    const groupCreated = $$(cardsPageSelectors.createdGroupsLinks)[0].getText();
+    const expected = cardsPage.groupName;
+    expect(groupCreated).equal(expected);
     browser.pause(1000);
   });
 
