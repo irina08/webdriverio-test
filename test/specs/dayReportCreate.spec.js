@@ -43,14 +43,12 @@ describe('CREATE DAY REPORT', () => {
     expect(actual).equal(expected);
     browser.pause(1000);
   });
-/*
-  it('should diary page has initial number of day reports >= 1', () => {
-    const num = $('div[qa="description"]').getText();
-    expect(num > 0).to.be.true;
 
+  it('should diary page has initial number of day reports >= 1', () => {
+    const num = $$('div[qa="description"]').length;
+    expect(num >= 1).to.be.true;
     browser.pause(1000);
   });
-*/
 
   it('should redirect to create day report page', () => {
     const createDayReport = $(diaryPageSelectors.createDayReportButton);
