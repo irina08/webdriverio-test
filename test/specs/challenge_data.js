@@ -18,7 +18,7 @@ const challengePageSelectors = {
     //listChallenges: '//span[@class = "mr-4"]',
     challengeName: '//input[@name="name"]',
     programmingLanguage: '//select[@name="programmingLang"]',
-    completedSolution: '//body[contains(@class,"js-focus-visible modal-open")]//div//div[2]//div[1]//div[1]//div[2]//textarea[1]',
+    completedSolution: '//div[@class="codeEditor"][@xpath="1"]',
     instruction: '//textarea[@name="instruction"]',
     saveButton: '//button[@class="mr-3 btn btn-primary disabled"]',
     createdChallenge: '//div[@qa="day-report-item-0"]'
