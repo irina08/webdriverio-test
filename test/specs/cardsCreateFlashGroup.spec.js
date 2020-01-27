@@ -57,6 +57,19 @@ describe('Create FlashCards/Create New FlashGroup', () => {
     browser.pause(1000);
   });
 
+  it('should modal window is existing', () => {
+    const element = $(cardsPageSelectors.modalWindowSelector);
+    expect(element.isExisting()).to.be.true;
+    browser.pause(1000);
+  });
+
+  it('should opened modal window has heading `Create Flash Group`', () => {
+    const actual = $(cardsPageSelectors.modalWindowHeading).getText();
+    const expected = cardsPage.h5;
+    expect(actual).equal(expected);
+    browser.pause(1000);
+  });
+
   it('should fill `Group name` field', () => {
     const element = $(cardsPageSelectors.groupNameSelector);
     element.setValue(cardsPage.groupName);
