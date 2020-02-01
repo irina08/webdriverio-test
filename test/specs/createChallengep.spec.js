@@ -38,22 +38,7 @@ describe('Create New Challenge', () => {
     browser.pause(1000);
   });
 
-  /*
-  it('should challenge page get success notification confirmation', () => {
-    const actual = $(challengePageSelectors.goToChallengePageNotification).getText();
-    const expected = challengePage.challengeNotification;
-    expect(actual).equal(expected);
-    browser.pause(1000);
-  });
-*/
-  /*
-  it('should some Challenges already exist', () => {
-    const countBefore = $$(challengePageSelectors.listChallenges).length;
-    console.log(countBefore);
-    expect(countBefore > 0).to.be.true;
-    browser.pause(1000);
-  });
-*/
+
 
   it('should button "Create Challenge" redirect to new window ' +
       'for creating challenge', () => {
@@ -62,6 +47,11 @@ describe('Create New Challenge', () => {
     browser.pause(1000);
   });
 
+  it('should modal window is existing', () => {
+    const element = $(challengePageSelectors.modalWindowSelector);
+    expect(element.isExisting()).to.be.true;
+    browser.pause(1000);
+  });
 
   it('should fill `Challenge name` field', () => {
     const element = $(challengePageSelectors.challengeName);
@@ -76,18 +66,18 @@ describe('Create New Challenge', () => {
     browser.pause(5000);
   });
 
+  it('should fill `Instruction` field', () => {
+    const element = $(challengePageSelectors.instruction);
+    element.setValue(challengePage.instruction);
+    browser.pause(1000);
+  });
+
   it('should fill `Completed solution` field', () => {
     const element = $(challengePageSelectors.completedSolution);
     element.setValue(challengePage.completedSolution);
     browser.pause(1000);
   });
 
-
-  it('should fill `Instruction` field', () => {
-    const element = $(challengePageSelectors.instruction);
-    element.setValue(challengePage.instruction);
-    browser.pause(1000);
-  });
 
   it('should create Challenge after clicking button "Save"', () => {
     const button = $(challengePageSelectors.saveButton);
